@@ -1,0 +1,23 @@
+package org.example.lic_policy_managament_system.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class UserRequestDTO {
+
+    @NotBlank(message = "Username is required")
+    private String username;
+
+    @Email(message = "Invalid email format")
+    @NotBlank(message = "Email is required")
+    private String email;
+
+    @Size(min = 5, message = "Password must be at least 5 characters")
+    private String password;
+
+    @NotBlank(message = "Role is required")
+    private String role;
+}
